@@ -1,3 +1,3 @@
-const fork = "example.txt" || "/dev/stdin";
-let input = require("fs").readFileSync(fork).toString();
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./example.txt";
+const input = require("fs").readFileSync(filePath).toString().split("\n");
 
