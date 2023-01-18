@@ -48,7 +48,7 @@ class Trie {
         return false;
       }
       currentNode = currentNode.children.get(char);
-      console.log(currentNode)
+    //   console.log(currentNode)
     }
     return true;
   }
@@ -58,5 +58,5 @@ const trie = new Trie();
 trie.insert("cat");
 trie.insert("can");
 console.log(trie.has("cat"));
-console.log(trie.has("can"));
-console.log(trie.has("cap"));
+// console.log(trie.has("can"));
+// console.log(trie.has("cap"));
