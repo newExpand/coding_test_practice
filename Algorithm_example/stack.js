@@ -5,56 +5,36 @@ class Node {
   }
 }
 
-class SinglyLinkedList {
+class Stack {
   constructor() {
-    this.head = null;
-    this.tail = null;
+    this.top = null;
+    this.size = 0;
   }
 
-  find(value) {
-    let currNode = this.head;
-    while (currNode.value !== value) {
-      currNode = currNode.next;
-    }
-    return currNode;
+  push(value) {
+    const node = new Node(value);
+    node.next = this.top;
+    this.top = node;
+    this.size += 1;
   }
 
-  append(newValue) {
-    let newNode = new Node(newValue);
-    if (this.head === null) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
-    }
+  pop() {
+    const value = this.top.value;
+    this.top = this.top.next;
+    this.size -= 1;
+    return value;
   }
 
-  insert(node, newValue) {
-    const newNode = new Node(newValue);
-    newNode.next = node.next;
-    node.next = newNode;
-  }
-
-  remove(value) {
-    let preNode = this.head;
-    while (preNode.next.value !== value) {
-      preNode = preNode.next;
-    }
-
-    if (preNode !== null) {
-      preNode.next = preNode.next.next;
-    }
-  }
-
-  display() {
-    let currNode = this.head;
-    let displayString = "[";
-    while (currNode !== null) {
-      displayString += `${currNode.value}, `;
-      currNode = currNode.next;
-    }
-    displayString = displayString.substr(0, displayString.length - 2);
-    displayString += "]";
+  size() {
+    return this.size;
   }
 }
+
+// const stack = new Stack();
+// stack.push(1);
+// stack.push(2);
+// stack.push(3);
+// console.log(stack.pop());
+// stack.push(4);
+// console.log(stack.pop());
+// console.log(stack.pop());
