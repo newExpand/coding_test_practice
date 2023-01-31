@@ -164,3 +164,5 @@ ll.printNode();
 ll.insert(3,3);
 console.log(ll.size())
 console.log(ll.head)
+
+export {LinkedList}
