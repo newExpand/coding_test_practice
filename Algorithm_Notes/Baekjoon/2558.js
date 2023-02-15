@@ -1,4 +1,4 @@
-const filePath = "/dev/stdin";
+const filePath = "./example.txt";
 const input = require("fs").readFileSync(filePath, "utf8").toString().split("\n").map(Number);
 
 console.log(input[0] + input[1]);
