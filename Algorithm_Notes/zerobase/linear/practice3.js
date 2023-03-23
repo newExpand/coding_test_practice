@@ -1,10 +1,14 @@
 function answer(nums) {
     let result = [];
 
+    // 내가 푼 것
+
     // nums.sort((a, b) => a - b);
 
     // result.push(nums[nums.length - 1], nums[nums.length - 2]);
 
+    // 선생이 푼 것
+    
     result = nums[0] > nums[1] ? [nums[0], nums[1]] : [nums[1], nums[0]];
     for (let i = 2; i < nums.length; i++) {
         if (nums[i] > result[0]) {
